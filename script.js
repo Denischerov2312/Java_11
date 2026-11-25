@@ -29,3 +29,40 @@ for (let i = 0; i < books.length; i++) {
 }
 
 console.log(genres);
+
+let n = 0;
+while (n < books.length) {
+    genres.forEach(function (genre, index) {
+        if (books[n].genre === genre && index == 0) {
+            fantasy.push(books[n]);
+        }
+        if (books[n].genre === genre && index == 1){
+            lovely_fiction.push(books[n]);
+        }
+        if (books[n].genre === genre && index == 2){
+            popadanchi.push(books[n]);
+        }
+        if (books[n].genre === genre && index == 3){
+            science_fiction.push(books[n]);
+        }
+    });
+    n++;
+}
+
+function titleSort(arr) {
+    return arr.sort((a,b) => a.title.localeCompare(b.title));
+}
+titleSort(fantasy);
+titleSort(lovely_fiction);
+titleSort(popadanchi);
+titleSort(science_fiction);
+
+
+console.log(fantasy);
+console.log(lovely_fiction);
+console.log(popadanchi);
+console.log(science_fiction);
+console.log(books);
+
+
+console.log('a'.localeCompare('a'))
